@@ -13,23 +13,11 @@ public class Hand {
         this.cardsInHand = new LinkedList<Card>();
     }
 
-    public void add(Card card){
-        this.cardsInHand.add(card);
-    }
-
-    public void remove(Card card){
-        this.cardsInHand.remove(card);
-    }
-
-    public void removeAll(){
-        this.cardsInHand.clear();
-    }
-
-
 
     public List<Card> getCardsInHand() {
         return cardsInHand;
     }
+
 
     public String toString(){
         StringBuilder sb = new StringBuilder();

@@ -18,7 +18,7 @@ public class Deck {
         this.random = new Random();
     }
 
-    public void fillDeck(){
+    private void fillDeck(){
       for(int cardValue = 1; cardValue <= 13; cardValue++){
           for(int cardSuit = 1; cardSuit <= 4; cardSuit++){
               cardDeck.add(new Card(cardValue, cardSuit));
@@ -34,15 +34,7 @@ public class Deck {
         return this.cardDeck.size();
     }
 
-    public void shuffleDeck(){
-        Card[] tempDeck = this.cardDeck.toArray(new Card[this.cardDeck.size()]);
-        this.cardDeck.clear();
-        while(tempDeck.length > this.cardDeck.size()){
-            int cardIndex = random.nextInt(tempDeck.length);
-            this.cardDeck.add(tempDeck[cardIndex]);
-        }
 
-    }
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -53,13 +45,6 @@ public class Deck {
 
     }
 
-    public Card drawCard(){
-        int cardIndex = random.nextInt(this.size());
-        Card toReturn = this.cardDeck.get(cardIndex);
-        this.cardDeck.remove(toReturn);
-        return toReturn;
-
-    }
 
 
 }
